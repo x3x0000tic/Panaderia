@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS panaderia;
+
+USE panaderia;
+
+CREATE TABLE IF NOT EXISTS productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    cantidad INT NOT NULL CHECK (cantidad >= 0),
+    precio DECIMAL(10, 2) NOT NULL CHECK (precio >= 0),
+    descripcion TEXT NOT NULL,
+    imagen_url VARCHAR(255) NOT NULL
+);
